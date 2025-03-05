@@ -1,3 +1,7 @@
+'''
+Analyses the CVs of all given results and prints a table including all provided results.
+'''
+
 import json
 import pickle
 import functions
@@ -51,11 +55,13 @@ for file in l_files:
 
     column_a = {'Method': Method+'_'+variation}
     column_b = {'Method': Method+'_'+variation}
+    # finds the sum of all alphas for each mRNA and the sum of all betas for each TF
     for R in mRNA_df.columns:
         column_a[R] = np.round(np.sum(x[alpha_pos_dict[R][0]:alpha_pos_dict[R][1]]),5)
         for TF in Target_TFs[R]:
             column_b[TF] = np.round(np.sum(x[beta_pos_dict[TF][0]:beta_pos_dict[TF][1]]),5)
     
+    # extrema
     max_alpha = max(x[list(alpha_pos_dict.items())[0][1][0]:list(alpha_pos_dict.items())[-1][1][-1]])
     min_alpha = min(x[list(alpha_pos_dict.items())[0][1][0]:list(alpha_pos_dict.items())[-1][1][-1]])
     
@@ -67,9 +73,11 @@ for file in l_files:
     column_b['max. beta'] = max_beta
     column_b['min. beta'] = min_beta
     
+    # add to the dataframe
     df_for_beta_ = df_for_beta_._append(column_b,ignore_index=True).drop_duplicates()
     df_for_alpha_ = df_for_alpha_._append(column_a,ignore_index=True)
 
+# can of course be saved, just add the lines :)
 df_for_alpha = df_for_alpha_.fillna(0).reindex(sorted(df_for_alpha_.columns),axis=1).set_index('Method').sort_index()
 df_for_beta = df_for_beta_.set_index('Method').reindex(sorted(df_for_beta_),axis=1).sort_index()
 print(df_for_alpha)

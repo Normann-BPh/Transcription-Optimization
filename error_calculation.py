@@ -1,3 +1,7 @@
+'''
+Calculates the MAE and RMSD of the provided solutions. Prints a table at the end. 
+'''
+
 import json
 import pickle
 import functions
@@ -6,7 +10,7 @@ import pandas as pd
 from random import choice
 from collections import Counter
 
-files = str(input('List (at least 2) of filenames seperated by "," of results, or "[q]uit" to end: '))
+files = str(input('List of filenames seperated by "," of results, or "[q]uit" to end: '))
 l_files = files.replace(' ','').split(',')
 if files in ['q','quit','']:
     exit()
@@ -33,7 +37,7 @@ mrna = [(mRNA_df[j][t]) for j in mRNA_df for t in range(9)]
 
 MAE_ = np.array([])
 RMSD_ = np.array([])
-n_input = 0
+n_input = len(l_files)
 
 for file in l_files:
     Method = file[len('res_'):file.find('_'+net_ver_)]
@@ -55,7 +59,6 @@ for file in l_files:
 
     MAE_ = np.append(MAE_,mae)
     RMSD_ = np.append(RMSD_,rmsd)
-    n_input += 1
 
 MAE = MAE_.reshape(n_input,len(mRNA_df.columns))
 RMSD = RMSD_.reshape(n_input,len(mRNA_df.columns))
@@ -66,12 +69,12 @@ RMSD_dict = dict(zip(column_names,np.round(RMSD,5)))
 MAE_df = pd.DataFrame(data=MAE_dict,index=index_names)
 RMSD_df = pd.DataFrame(data=RMSD_dict,index=index_names)
 
-Grading_df = pd.concat([MAE_df,RMSD_df],axis=1)
+MAE_RMSD_Table = pd.concat([MAE_df,RMSD_df],axis=1)
 
-Grading_df = Grading_df.sort_index()
+MAE_RMSD_Table = MAE_RMSD_Table.sort_index()
 
-Grading_df.loc['total'] = np.concatenate((np.sum(MAE,axis=1),np.sum(RMSD,axis=1)),axis=0)
-Grading_df.loc['max'] = [np.max(Grading_df[i][:-1]) for i in Grading_df.columns]
-Grading_df.loc['min'] = [np.min(Grading_df[i][:-2]) for i in Grading_df.columns]
+MAE_RMSD_Table.loc['total'] = np.concatenate((np.sum(MAE,axis=1),np.sum(RMSD,axis=1)),axis=0)
+MAE_RMSD_Table.loc['max'] = [np.max(MAE_RMSD_Table[i][:-1]) for i in MAE_RMSD_Table.columns]
+MAE_RMSD_Table.loc['min'] = [np.min(MAE_RMSD_Table[i][:-2]) for i in MAE_RMSD_Table.columns]
 
-print(Grading_df)
+print(MAE_RMSD_Table)
