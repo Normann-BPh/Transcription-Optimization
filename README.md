@@ -12,3 +12,6 @@ The quasi-newtonian method SLSQP is a modified Sequential Quadratic Programming 
 This heuristic algorithm sorts the proposed solutions by their dominance, meaning those that give the best result are preferred, but violating the constraints does not concluded in being automatically excluded from the selection and crossover. Proposed solutions can lie outside the search space.
 ### DE - Differential Evolution
 The second heuristic algorithm uses the best proposed solutions and combines them into the next generation. Just as the other genetic/evolutionary algorithm, DE does not prioritize all constraints and sometimes lies outside the search space.
+
+## Suggestion(s)
+Before using the scripts I recommend to go through the respective documentations. I used PyMoo for the DE and NSGA2 implementation and scipy for the SLSQP implementation.
