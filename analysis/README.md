@@ -36,9 +36,9 @@ E' = \begin{cases}
 	\text{0}, \quad \text{if } \bar{S}_{TF} = 0,
 	\end{cases} 
 \end{equation}
-- Inhibition
-- Activation
-- n0ne
+- **I**nhibition
+- **A**ctivation
+- n**0**ne
 
 \begin{equation}
 E'' = \begin{cases}
@@ -47,9 +47,9 @@ E'' = \begin{cases}
 	\text{n}, \quad \text{if } \bar{S}_{TF} = \bar{TF}.
 	\end{cases} 
 \end{equation}
-- repressed
-- enhanced
-- normal
+- **r**epressed
+- **e**nhanced
+- **n**ormal
 
 The old method is also included in the script, but commented out.
 
