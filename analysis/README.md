@@ -2,8 +2,8 @@ The scripts in this directory were used to analyse the parameters and their pred
 
 # `constraint_violartions.py`
 This script checks each parameter-set for violations of the following constraints:
-- $$0 \le \alpha \le 1$ with each $\alpha$-set under the constraint: $\sum_i \alpha_i = 1$$
-- $$-2 \le \beta \le 2$ with each $\beta$-set under the constraint: $\sum_j \beta_j = 1$$
+- $$0 \le \alpha \le 1$$ with each $$\alpha$$-set under the constraint: $$\sum_i \alpha_i = 1$$
+- $$-2 \le \beta \le 2$$ with each $$\beta$$-set under the constraint: $$\sum_j \beta_j = 1$$
 
 
 Required are the dictionary with the postion of the parameters, the dictionary of the network and any number of parameter-sets. 
