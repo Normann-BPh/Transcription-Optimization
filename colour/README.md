@@ -1,5 +1,5 @@
-These two sets were generated with https://medialab.github.io/iwanthue/. The first .json was used for the alpha values, with each 
-TF paired with a fixed colour. The second .json contains the colours for the PSites, six in total.
+These two sets were generated with https://medialab.github.io/iwanthue/. The first file `colour_code_HitG_v2.json` was used for the alpha values, with each 
+TF paired with a fixed colour. The second file `colour_code_PSites.json` contains the colours for the PSites, six in total.
 
 The plots of the predictions used the following hex codes
 - DE_rmsd: #8958d0,
