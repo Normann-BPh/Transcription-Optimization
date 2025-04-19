@@ -29,24 +29,24 @@ $$S_{TF} = \alpha_{i,j} \cdot TF_{i,j} \cdot (\beta^0_j + \sum_q^k \beta_j^q \cd
 
 The latest (Colloqium) method decided by the following statements
 
-\begin{equation}
+$$
 E' = \begin{cases}
 	\text{I}, \quad \text{if } \bar{S}_{TF} < 0,\\
 	\text{A}, \quad \text{if } 0 < \bar{S}_{TF},\\
 	\text{0}, \quad \text{if } \bar{S}_{TF} = 0,
 	\end{cases} 
-\end{equation}
+$$
 - **I**nhibition
 - **A**ctivation
 - n**0**ne
 
-\begin{equation}
+$$
 E'' = \begin{cases}
 	\text{r}, \quad \text{if } \bar{S}_{TF} < \bar{TF},\\
 	\text{e}, \quad \text{if } \bar{TF} < \bar{S}_{TF},\\
 	\text{n}, \quad \text{if } \bar{S}_{TF} = \bar{TF}.
 	\end{cases} 
-\end{equation}
+$$
 - **r**epressed
 - **e**nhanced
 - **n**ormal
