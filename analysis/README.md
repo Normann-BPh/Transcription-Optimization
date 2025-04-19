@@ -28,6 +28,7 @@ defined as follows
 $S_{TF} = \alpha_{i,j} \cdot TF_{i,j} \cdot (\beta^0_j + \sum_q^k \beta_j^q \cdot [PSite]_j^k).$
 
 The latest (Colloqium) method decided by the following statements
+
 \begin{equation}
 E' = \begin{cases}
 	\text{I}, \quad \text{if } \bar{S}_{TF} < 0,\\
