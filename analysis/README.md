@@ -35,6 +35,7 @@ $E' = \begin{cases}
 - Inhibition
 - Activation
 - n0ne
+
 $E'' = \begin{cases}
 	\text{r}, \quad \text{if } \bar{S}_{TF} < \bar{TF}, \\
 	\text{e}, \quad \text{if } \bar{TF} < \bar{S}_{TF}, \\
