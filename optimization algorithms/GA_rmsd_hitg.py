@@ -23,10 +23,6 @@ from pymoo.core.evaluator import Evaluator
 
 with open("../dicts/Target_TFs_HitG.json", "r") as f:
     Target_TFs = json.load(f)
-with open("../dicts/TF_Targets_HitG.json", "r") as f:
-    TF_Targets = json.load(f)
-with open("../dicts/non_optimizables_HitG.json", "r") as f:
-    non_opti = json.load(f)
 
 mRNA_df = pd.read_pickle("../pickle/mRNA_collectri_HitG_50_df.pkl")
 Prot_time_df = pd.read_pickle("../pickle/Prot_time_collectri_HitG_50_df.pkl")
